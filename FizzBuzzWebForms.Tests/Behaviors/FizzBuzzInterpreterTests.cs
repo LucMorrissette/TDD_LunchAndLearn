@@ -1,13 +1,12 @@
-﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace FizzBuzzWebForms.Tests
+namespace FizzBuzzWebForms.Tests.Behaviors
 {
     [TestClass]
-    public class UnitTest1
+    public class FizzBuzzInterpreterTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void MyFirstTest()
         {
         }
     }
