@@ -1,3 +1,5 @@
+using System;
+using FizzBuzzWebForms.Behaviors;
 using NUnit.Framework;
 
 namespace FizzBuzzWebForms.Tests.Behaviors
@@ -6,8 +8,56 @@ namespace FizzBuzzWebForms.Tests.Behaviors
     public class FizzBuzzInterpreterTests
     {
         [Test]
-        public void MyFirstTest()
+        [ExpectedException(typeof(ArgumentException), ExpectedMessage = "Input cannot exceed 100.")]
+        public void Given101ExpectException()
         {
+            var interpreter = new FizzBuzzInterpreter();
+            var actual = interpreter.Interpret(101);
+        }
+
+        [Test]
+        public void Given1Expect1()
+        {
+            var interpreter = new FizzBuzzInterpreter();
+            var expected = "1";
+            var actual = interpreter.Interpret(1);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Given2Expect2()
+        {
+            var interpreter = new FizzBuzzInterpreter();
+            var expected = "2";
+            var actual = interpreter.Interpret(2);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Given3ExpectFizz()
+        {
+            var interpreter = new FizzBuzzInterpreter();
+            var expected = "Fizz";
+            var actual = interpreter.Interpret(3);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Given5ExpectBuzz()
+        {
+            var interpreter = new FizzBuzzInterpreter();
+            var expected = "Buzz";
+            var actual = interpreter.Interpret(5);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Given6ExpectFizz()
+        {
+            var interpreter = new FizzBuzzInterpreter();
+            var expected = "Fizz";
+            var actual = interpreter.Interpret(6);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
