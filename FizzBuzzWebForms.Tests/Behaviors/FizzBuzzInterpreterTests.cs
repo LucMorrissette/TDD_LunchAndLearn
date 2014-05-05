@@ -1,11 +1,11 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace FizzBuzzWebForms.Tests.Behaviors
 {
-    [TestClass]
+    [TestFixture]
     public class FizzBuzzInterpreterTests
     {
-        [TestMethod]
+        [Test]
         public void MyFirstTest()
         {
         }
