@@ -52,12 +52,15 @@ namespace FizzBuzzWebForms.Tests.Behaviors
         }
 
         [Test]
-        public void Given6ExpectFizz()
+        public void Given15ExpectFizzBuzz()
         {
             var interpreter = new FizzBuzzInterpreter();
-            var expected = "Fizz";
-            var actual = interpreter.Interpret(6);
+            var expected = "FizzBuzz";
+            var actual = interpreter.Interpret(15);
             Assert.AreEqual(expected, actual);
         }
+
+
+
     }
 }
