@@ -8,11 +8,19 @@ namespace FizzBuzzWebForms.Tests.Behaviors
     public class FizzBuzzInterpreterTests
     {
         [Test]
-        [ExpectedException(typeof(ArgumentException), ExpectedMessage = "Input cannot exceed 100.")]
+        [ExpectedException(typeof(ArgumentException), ExpectedMessage = "Input is out of range.")]
         public void Given101ExpectException()
         {
             var interpreter = new FizzBuzzInterpreter();
             var actual = interpreter.Interpret(101);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentException), ExpectedMessage = "Input is out of range.")]
+        public void GivenZeroExpectException()
+        {
+            var interpreter = new FizzBuzzInterpreter();
+            var actual = interpreter.Interpret(0);
         }
 
         [Test]

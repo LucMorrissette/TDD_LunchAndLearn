@@ -6,8 +6,8 @@ namespace FizzBuzzWebForms.Behaviors
     {
         public string Interpret(int input)
         {
-            if(input > 100)
-                throw new ArgumentException("Input cannot exceed 100.");
+            if(input < 1 || input > 100)
+                throw new ArgumentException("Input is out of range.");
 
             if (input % 15 == 0)
                 return "FizzBuzz";
