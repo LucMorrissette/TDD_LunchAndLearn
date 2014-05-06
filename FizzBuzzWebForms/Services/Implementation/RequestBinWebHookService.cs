@@ -6,9 +6,9 @@ namespace FizzBuzzWebForms.Services.Implementation
 {
     public class RequestBinWebHookService : IWebHookService
     {
-        public string Send(dynamic whatever)
+        public string Send(string body)
         {
-            var task = MakeRequest(JsonConvert.SerializeObject(whatever));
+            var task = MakeRequest(body);
             var response = task.Result;
             return response.Content.ReadAsStringAsync().Result;
         }

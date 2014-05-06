@@ -5,6 +5,6 @@ namespace FizzBuzzWebForms.Services
 {
     public interface IWebHookService
     {
-        string Send(dynamic whatever);
+        string Send(string body);
     }
 }

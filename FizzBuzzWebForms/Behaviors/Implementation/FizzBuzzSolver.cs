@@ -7,7 +7,6 @@ namespace FizzBuzzWebForms.Behaviors.Implementation
     {
         public Turn Solve(int input)
         {
-            var turn = new Turn();
             var answer = string.Empty;
             
             if (input < 1 || input > 100)
