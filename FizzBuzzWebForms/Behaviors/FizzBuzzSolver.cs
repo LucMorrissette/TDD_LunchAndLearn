@@ -2,9 +2,9 @@
 
 namespace FizzBuzzWebForms.Behaviors
 {
-    public class FizzBuzzInterpreter
+    public class FizzBuzzSolver
     {
-        public string Interpret(int input)
+        public string Solve(int input)
         {
             if(input < 1 || input > 100)
                 throw new ArgumentException("Input is out of range.");

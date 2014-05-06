@@ -69,7 +69,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Behaviors\FizzBuzzInterpreterTests.cs" />
+    <Compile Include="Behaviors\FizzBuzzSolverTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
