@@ -1,18 +1,18 @@
 using System;
-using FizzBuzzWebForms.Behaviors;
+using FizzBuzzWebForms.Behaviors.Implementation;
 using NUnit.Framework;
 
 namespace FizzBuzzWebForms.Tests.Behaviors
 {
     [TestFixture]
-    public class FizzBuzzInterpreterTests
+    public class FizzBuzzSolverTests
     {
-        private FizzBuzzInterpreter interpreter;
+        private FizzBuzzSolver solver;
         
         [SetUp]
         public void Init()
         {
-            interpreter = new FizzBuzzInterpreter();
+            solver = new FizzBuzzSolver();
         }
         
         
@@ -20,21 +20,21 @@ namespace FizzBuzzWebForms.Tests.Behaviors
         [ExpectedException(typeof(ArgumentException), ExpectedMessage = "Input is out of range.")]
         public void Given101ExpectException()
         {
-            interpreter.Interpret(101);
+            solver.Solve(101);
         }
 
         [Test]
         [ExpectedException(typeof(ArgumentException), ExpectedMessage = "Input is out of range.")]
         public void GivenZeroExpectException()
         {
-            interpreter.Interpret(0);
+            solver.Solve(0);
         }
 
         [Test]
         public void Given1Expect1()
         {
             var expected = "1";
-            var actual = interpreter.Interpret(1);
+            var actual = solver.Solve(1).Answer;
             Assert.AreEqual(expected, actual);
         }
 
@@ -42,7 +42,7 @@ namespace FizzBuzzWebForms.Tests.Behaviors
         public void Given2Expect2()
         {
             var expected = "2";
-            var actual = interpreter.Interpret(2);
+            var actual = solver.Solve(2).Answer;
             Assert.AreEqual(expected, actual);
         }
 
@@ -56,7 +56,7 @@ namespace FizzBuzzWebForms.Tests.Behaviors
         public void GivenDivisibleby3AndNot5ExpectFizz(int input)
         {
             var expected = "Fizz";
-            var actual = interpreter.Interpret(input);
+            var actual = solver.Solve(input).Answer;
             Assert.AreEqual(expected, actual);
         }
 
@@ -70,7 +70,7 @@ namespace FizzBuzzWebForms.Tests.Behaviors
         public void GivenDivisibleBy5AndNot3ExpectBuzz(int input)
         {
             var expected = "Buzz";
-            var actual = interpreter.Interpret(input);
+            var actual = solver.Solve(input).Answer;
             Assert.AreEqual(expected, actual);
         }
 
@@ -82,7 +82,7 @@ namespace FizzBuzzWebForms.Tests.Behaviors
         public void GiveDivisibleByBoth5and3ExpectFizzBuzz(int input)
         {
             var expected = "FizzBuzz";
-            var actual = interpreter.Interpret(input);
+            var actual = solver.Solve(input).Answer;
             Assert.AreEqual(expected, actual);
         }
 

@@ -7,6 +7,7 @@ namespace FizzBuzzWebForms.FizzBuzz
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             const int upper = 100;
 
             for (var i = 1; i <= upper; i++)

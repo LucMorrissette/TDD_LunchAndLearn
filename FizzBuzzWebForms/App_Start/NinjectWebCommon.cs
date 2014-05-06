@@ -1,3 +1,10 @@
+using FizzBuzzWebForms.Behaviors;
+using FizzBuzzWebForms.Behaviors.Implementation;
+using FizzBuzzWebForms.Orchestrations;
+using FizzBuzzWebForms.Orchestrations.Implementation;
+using FizzBuzzWebForms.Services;
+using FizzBuzzWebForms.Services.Implementation;
+
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(FizzBuzzWebForms.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(FizzBuzzWebForms.App_Start.NinjectWebCommon), "Stop")]
 
@@ -61,6 +68,14 @@ namespace FizzBuzzWebForms.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            //Orchestrations
+            kernel.Bind<IFizzBuzzOrchestration>().To<FizzBuzzOrchestration>();
+
+            //Behaviours
+            kernel.Bind<IFizzBuzzSolver>().To<FizzBuzzSolver>();
+
+            //Services
+            kernel.Bind<IWebHookService>().To<RequestBinWebHookService>();
         }        
     }
 }
