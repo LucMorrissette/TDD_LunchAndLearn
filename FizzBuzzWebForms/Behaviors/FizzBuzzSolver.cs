@@ -2,7 +2,7 @@
 
 namespace FizzBuzzWebForms.Behaviors
 {
-    public class FizzBuzzInterpreter
+    public class FizzBuzzSolver
     {
         public string Interpret(int input)
         {
